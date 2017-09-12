@@ -34,6 +34,12 @@ brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype
 npm run audio
 ```
 
+### watch audio folder and convert
+```
+npm run audio:watch
+```
+
+
 # Json
 
 ## scripts
