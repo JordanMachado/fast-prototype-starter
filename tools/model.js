@@ -7,7 +7,8 @@ const optimize 										= require('./tasks/optimizeModel');
 const copy 												= require('./utils/copy');
 const getFileSubdirectory 				= require('./utils/getFileSubdirectory');
 const getFileOptions   						= require('./utils/getFileOptions');
-const removeOptions   = require('./utils/removeOptions');
+const removeOptions   						= require('./utils/removeOptions');
+const createManifest							= require('./utils/createManifest');
 
 const destDir = path.resolve(paths.destination.model);
 const sourceDir = path.resolve(paths.source.model);
@@ -42,8 +43,9 @@ function processObj() {
 			} else {
 				copy(file, outputPath);
 			}
-
 		}
+		createManifest(files, sourceDir, 'model', 'manifest-model.js', 'binary');
+
 	});
 
 }

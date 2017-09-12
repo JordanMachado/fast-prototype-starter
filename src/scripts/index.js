@@ -1,21 +1,11 @@
 import style from 'styles/main.scss';
 import domready from 'domready';
 import assetsLoader from 'assets-loader';
+import manifestModel from './manifests/manifest-model';
+import manifestImage from './manifests/manifest-image';
 
-// TODO get manifest for all assets
-let _assets = ['assets/image/grey-pattern.jpg']
-
-let assets = [];
-for (var i = 0; i < _assets.length; i++) {
-  let asset = _assets[i];
-  let id = asset.split(/(\\|\/)/g).pop().replace(/\.[^/.]+$/, "")
-  assets.push({
-    id,
-    url: asset,
-  })
-}
 const loader = assetsLoader({
-  assets
+  assets: [].concat(manifestModel,manifestImage)
 });
 window.getAsset = function(id) {
   return loader.get(id);

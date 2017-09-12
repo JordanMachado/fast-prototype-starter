@@ -3,6 +3,7 @@ const path        = require('path');
 const paths       = require('./paths');
 const dir         = require('node-dir');
 const convertImages  = require('./tasks/convertImages');
+const createManifest  = require('./utils/createManifest');
 
 const sourceDir = path.resolve(paths.source.image);
 const destDir = path.resolve(paths.destination.image);
@@ -27,6 +28,8 @@ function processImages() {
     		const file = files[i];
     		convertImages(file, sourceDir, destDir);
     	}
+		createManifest(files, sourceDir, 'image', 'manifest-image.js', null);
+
   });
 
 }

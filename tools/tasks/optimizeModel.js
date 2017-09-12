@@ -14,6 +14,6 @@ module.exports = function(file, ouputPath, options) {
 
 	fs.outputFile(ouputPath, obj, function(err) {
 		if (err) { return console.log(err); }
-		console.log('Obj optimized');
+		// console.log('Obj optimized');
 	});
 };
