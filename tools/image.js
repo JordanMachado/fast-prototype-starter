@@ -19,7 +19,6 @@ fs.emptyDir(destDir, (err) => {
 function processImages() {
   dir.files(sourceDir, (err, files) => {
     if (err) console.log(err);
-    console.log(files);
 
     files = files.filter(function (file) {
     	return file.indexOf('.DS_Store') === -1;
