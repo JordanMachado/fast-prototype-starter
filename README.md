@@ -6,10 +6,33 @@ description here of all the features comming soon
 
 * npm start
 * npm dev
+* npm run audio
 * npm run json
 * npm run json:watch
+* npm run model
+* npm run model:watch
 
 
+
+# Audio
+
+## prequire : ffmpeg
+```
+http://brew.sh/
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype
+ --with-frei0r --with-libass --with-libvo-aacenc --with-libvorbis
+ --with-libvpx --with-opencore-amr --with-openjpeg --with-opus
+ --with-rtmpdump --with-schroedinger --with-speex --with-theora --with-tools
+```
+
+## scripts
+
+### convert all audio files in .mp3 & .ogg if it's .wav copy and convert
+```
+npm run audio
+```
 
 # Json
 
