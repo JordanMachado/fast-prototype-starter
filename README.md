@@ -1,5 +1,6 @@
-# fast-prototype-starter
+# Fast-prototype-starter
 
+description here of all the features comming soon
 
 ## List npm scripts
 
