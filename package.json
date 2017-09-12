@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "jshintConfig": ".jshintrc",
   "scripts": {
+    "image": "node ./tools/image.js",
     "audio": "node ./tools/audio.js",
     "audio:watch": "node ./tools/audio-watch.js",
     "model": "node ./tools/model.js",

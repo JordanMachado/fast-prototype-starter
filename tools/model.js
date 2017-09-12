@@ -7,7 +7,7 @@ const optimize 										= require('./tasks/optimizeModel');
 const copy 												= require('./utils/copy');
 const getFileSubdirectory 				= require('./utils/getFileSubdirectory');
 const getFileOptions   						= require('./utils/getFileOptions');
-const getFilenameWithoutOptions   = require('./utils/getFilenameWithoutOptions');
+const removeOptions   = require('./utils/removeOptions');
 
 const destDir = path.resolve(paths.destination.model);
 const sourceDir = path.resolve(paths.source.model);
@@ -33,7 +33,7 @@ function processObj() {
 			const file = files[i];
 			const options = getFileOptions(file);
 
-			let fileName = getFilenameWithoutOptions(path.basename(file));
+			let fileName = removeOptions(path.basename(file));
 		  let sub = getFileSubdirectory(path.resolve(paths.source.model), path.resolve(file));
 			const outputPath = path.resolve(`${paths.destination.model}${sub}${fileName}`);
 

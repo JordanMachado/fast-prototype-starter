@@ -8,7 +8,7 @@ const optimize 										= require('./tasks/optimizeModel');
 const copy 												= require('./utils/copy');
 const getFileSubdirectory 				= require('./utils/getFileSubdirectory');
 const getFileOptions   						= require('./utils/getFileOptions');
-const getFilenameWithoutOptions   = require('./utils/getFilenameWithoutOptions');
+const removeOptions   = require('./utils/removeOptions');
 const cleanDir 										= require('./utils/cleanDir');
 const watcher 										= require('./watcher');
 
@@ -25,7 +25,7 @@ const watcherModel = watcher([ sourceDir ],
 watcherModel.on('all',(event, file) => {
 	if(event === 'unlink') {
 		const sub = getFileSubdirectory(sourceDir , path.resolve(file));
-		const fileName = getFilenameWithoutOptions(path.basename(file));
+		const fileName = removeOptions(path.basename(file));
 		fs.removeSync(`${paths.destination.model}${sub}${fileName}`);
 		cleanDir(path.resolve(`${paths.destination.model}${sub}`));
 		return;
@@ -33,7 +33,7 @@ watcherModel.on('all',(event, file) => {
 	if (event !== 'change' && event !== 'add') return;
 	if (file.indexOf('.DS_Store') > -1) return;
 
-	let fileName = getFilenameWithoutOptions(path.basename(file));
+	let fileName = removeOptions(path.basename(file));
 	let sub = getFileSubdirectory(path.resolve(paths.source.model), path.resolve(file));
 	const outputPath = path.resolve(`${paths.destination.model}${sub}${fileName}`);
 	const options = getFileOptions(file);

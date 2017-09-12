@@ -2,6 +2,6 @@
 
 'use strict';
 
-module.exports = function getFilenameWithoutOptions(filename) {
+module.exports = function removeOptions(filename) {
 	return filename.replace(/{.*}/g, '');
 }
