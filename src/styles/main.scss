@@ -1,3 +1,7 @@
 body {
   background-color: black;
+
+  &.loading {
+    background-color: black;
+  }
 }
