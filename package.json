@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "jshintConfig": ".jshintrc",
   "scripts": {
+    "audio": "node ./tools/audio.js",
     "model": "node ./tools/model.js",
     "model:watch": "node ./tools/model-watch.js",
     "json": "node ./tools/json.js",
@@ -28,6 +29,7 @@
     "chokidar": "^1.7.0",
     "css-loader": "^0.28.7",
     "events": "^1.1.1",
+    "fluent-ffmpeg": "^2.1.2",
     "fs-extra": "^4.0.1",
     "html-webpack-plugin": "^2.30.1",
     "ip": "^1.1.5",
