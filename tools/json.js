@@ -9,7 +9,7 @@ const sourceDir = path.resolve(paths.source.json);
 
 fs.emptyDir(destDir, (err) => {
 	if(err) {
-		console.log(`Error empty folder : ${destDir}`.red);
+		console.log(err);
 		return;
 	}
 	processJson();

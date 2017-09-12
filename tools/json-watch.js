@@ -5,13 +5,16 @@ const minifyJson 				= require('./tasks/minifyJson');
 const paths 							= require('./paths');
 const getFileSubdirectory = require('./utils/getFileSubdirectory');
 const cleanDir = require('./utils/cleanDir');
-const watcherJSON = watcher([ path.resolve(paths.source.json) ],
+
+
+const sourceDir = path.resolve(paths.source.json);
+
+const watcherJSON = watcher([ sourceDir ],
 	{
 		ignoreInitial: true
 	}
 );
 
-const sourceDir = path.resolve(paths.source.json);
 
 watcherJSON.on('all',(event, file) => {
 	if(event === 'unlink') {
