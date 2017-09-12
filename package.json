@@ -6,6 +6,7 @@
   "jshintConfig": ".jshintrc",
   "scripts": {
     "audio": "node ./tools/audio.js",
+    "audio:watch": "node ./tools/audio-watch.js",
     "model": "node ./tools/model.js",
     "model:watch": "node ./tools/model-watch.js",
     "json": "node ./tools/json.js",
