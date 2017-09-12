@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "jshintConfig": ".jshintrc",
   "scripts": {
+    "model": "node ./tools/model.js",
     "json": "node ./tools/json.js",
     "json:watch": "node ./tools/json-watch.js",
     "start": "webpack-dev-server --progress --colors",

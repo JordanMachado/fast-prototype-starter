@@ -4,14 +4,28 @@ const paths       = require('./paths');
 const dir         = require('node-dir');
 const minifyJson  = require('./tasks/minifyJson');
 
-dir.files(path.resolve(paths.source.json), (err, files) => {
-  if (err) console.log(err);
+const destDir = path.resolve(paths.destination.json);
+const sourceDir = path.resolve(paths.source.json);
 
-  files = files.filter(function (file) {
-  	return file.indexOf('.DS_Store') === -1;
-  });
-  	for (var i = 0; i < files.length; i++) {
-  		const file = files[i];
-  		minifyJson(file);
-  	}
+fs.emptyDir(destDir, (err) => {
+	if(err) {
+		console.log(`Error empty folder : ${destDir}`.red);
+		return;
+	}
+	processJson();
 });
+
+function processJson() {
+  dir.files(sourceDir, (err, files) => {
+    if (err) console.log(err);
+
+    files = files.filter(function (file) {
+    	return file.indexOf('.DS_Store') === -1;
+    });
+    	for (var i = 0; i < files.length; i++) {
+    		const file = files[i];
+    		minifyJson(file);
+    	}
+  });
+
+}

@@ -11,9 +11,11 @@ const watcherJSON = watcher([ path.resolve(paths.source.json) ],
 	}
 );
 
+const sourceDir = path.resolve(paths.source.json);
+
 watcherJSON.on('all',(event, file) => {
 	if(event === 'unlink') {
-		const sub = getFileSubdirectory(path.resolve(paths.source.json), path.resolve(file));
+		const sub = getFileSubdirectory(sourceDir , path.resolve(file));
 		const fileName = path.basename(file);
 		fs.removeSync(`${paths.destination.json}${sub}${fileName}`);
 		cleanDir(path.resolve(`${paths.destination.json}${sub}`));
