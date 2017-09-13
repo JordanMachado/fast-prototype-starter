@@ -3,9 +3,10 @@ import domready from 'domready';
 import assetsLoader from 'assets-loader';
 import manifestModel from './manifests/manifest-model';
 import manifestImage from './manifests/manifest-image';
+import manifestAudio from './manifests/manifest-audio';
 
 const loader = assetsLoader({
-  assets: [].concat(manifestModel,manifestImage)
+  assets: [].concat(manifestModel, manifestImage, manifestAudio)
 });
 window.getAsset = function(id) {
   return loader.get(id);
@@ -34,4 +35,5 @@ domready(()=> {
 
 function init() {
   console.log('Init experiment');
+  // console.log(getAsset('main_loop').play());
 }
