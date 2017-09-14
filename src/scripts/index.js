@@ -12,7 +12,6 @@ window.getAsset = function(id) {
   return loader.get(id);
 }
 
-
 domready(()=> {
   console.log('Fast prototype starter https://github.com/JordanMachado/fast-prototype-starter');
   // TODO animation loader

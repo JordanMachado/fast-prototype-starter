@@ -4,7 +4,6 @@ const paths       			= require('./paths');
 const dir         			= require('node-dir');
 const convertImages  		= require('./tasks/convertImages');
 const createManifest  	= require('./utils/createManifest');
-const createManifest		= require('./utils/createManifest');
 
 const sourceDir = path.resolve(paths.source.image);
 const destDir = path.resolve(paths.destination.image);
