@@ -12,7 +12,7 @@
     "model:watch": "node ./tools/model-watch.js",
     "json": "node ./tools/json.js",
     "json:watch": "node ./tools/json-watch.js",
-    "start": "npm run image && webpack-dev-server --progress --colors --no-info --client-log-level error",
+    "start": "npm run image && npm run model && npm run audio && webpack-dev-server --progress --colors --no-info --client-log-level error",
     "serve": "webpack-dev-server --progress --colors"
   },
   "author": "Jojo | Jordan Machado",

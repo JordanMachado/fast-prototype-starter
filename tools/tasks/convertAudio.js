@@ -33,7 +33,7 @@ function ogg(mSource, mDestDir, subdir) {
 
 
 function convertAudio(mSource, mDestDir) {
-	console.log(`Converting audio:${mSource}`);
+	// console.log(`Converting audio:${mSource}`);
 	const subdir = getFileSubdirectory(path.resolve(paths.source.audio),path.resolve(mSource));
 	if(subdir) {
 		fs.mkdirs(`${paths.destination.audio}${subdir}`);
