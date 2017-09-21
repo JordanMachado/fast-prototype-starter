@@ -1,6 +1,11 @@
-# Fast-prototype-starter WORK in progress
+# Fast-prototype-starter WORK IN PROGRESS
 
-description here of all the features comming soon
+description here of all the features comming soon:
+
+- auto minify json
+- auto convert wav in .mp3 & .ogg
+- optimize obj
+- images (will create high and low res)
 
 ## List npm scripts
 
@@ -11,6 +16,8 @@ description here of all the features comming soon
 * npm run json:watch
 * npm run model
 * npm run model:watch
+* npm run image
+* npm run image:watch
 
 
 
