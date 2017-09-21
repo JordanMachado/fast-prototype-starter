@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+.project
+.grunt
+*.sublime-*
+*.log
+.idea
+dist/assets
+.tmp
+.happypack
