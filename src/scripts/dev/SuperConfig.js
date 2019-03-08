@@ -23,7 +23,6 @@ class SuperConfig
 
       this.controls = {};
 
-      console.log(this.config);
 
       if (Query.config)
       {
@@ -61,7 +60,7 @@ class SuperConfig
 
         if (Query.develop)
         { params += 'develop=true&'; }
-        console.log(Query.experiment);
+
         if (Query.experiment)
         { params += `experiment="${Query.experiment}"&`; }
         if (Query.debug)
